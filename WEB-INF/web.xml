@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
+
+	<jsp-config>
+		<jsp-property-group>
+			<url-pattern>*.jsp</url-pattern>
+			<include-prelude>/WEB-INF/taglibs.jsp</include-prelude>
+		</jsp-property-group>
+	</jsp-config>
+	<servlet>
+		<servlet-name>Inscription</servlet-name>
+		<servlet-class>com.ti.servlets.Inscription</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Inscription</servlet-name>
+		<url-pattern>/inscription</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Connexion</servlet-name>
+		<servlet-class>com.ti.servlets.Connexion</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Connexion</servlet-name>
+		<url-pattern>/connexion</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Deconnexion</servlet-name>
+		<servlet-class>com.ti.servlets.Deconnexion</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Deconnexion</servlet-name>
+		<url-pattern>/deconnexion</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Home</servlet-name>
+		<servlet-class>com.ti.servlets.Home</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Home</servlet-name>
+		<url-pattern>/home</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>Upload</servlet-name>
+		<servlet-class>com.ti.servlets.Upload</servlet-class>
+		<init-param>
+			<param-name>chemin_private</param-name>
+			<param-value>C:/Users/ynnot/Documents/tp/private/</param-value>
+		</init-param>
+		<init-param>
+			<param-name>chemin_public</param-name>
+			<param-value>C:/Users/ynnot/Documents/tp/public/</param-value>
+		</init-param>
+		<multipart-config>
+			<location>C:/Users/ynnot/Documents/tp</location>
+			<max-file-size>10485760</max-file-size> <!-- 10 Mo -->
+			<max-request-size>52428800</max-request-size> <!-- 5 x 10 Mo -->
+			<file-size-threshold>1048576</file-size-threshold> <!-- 1 Mo -->
+		</multipart-config>
+	</servlet>
+	
+
+	<servlet-mapping>
+		<servlet-name>Upload</servlet-name>
+		<url-pattern>/upload</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>Compress</servlet-name>
+		<servlet-class>com.ti.servlets.Compress</servlet-class>
+		<init-param>
+			<param-name>chemin</param-name>
+			<param-value>C:/Users/ynnot/Documents/tp/</param-value>
+		</init-param>
+		<multipart-config>
+			<location>C:/Users/ynnot/Documents/tp</location>
+			<max-file-size>524288000</max-file-size> <!-- 500 Mo -->
+			<max-request-size>524288000</max-request-size> <!-- 50 x 10 Mo -->
+			<file-size-threshold>524288000</file-size-threshold> <!-- 500Mo -->
+		</multipart-config>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Compress</servlet-name>
+		<url-pattern>/compress</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>Download</servlet-name>
+		<servlet-class>com.ti.servlets.Download</servlet-class>
+		<init-param>
+			<param-name>chemin</param-name>
+			<param-value>C:/Users/ynnot/Documents/tp/public/</param-value>
+		</init-param>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Download</servlet-name>
+		<url-pattern>/fichiers/public/*</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>UploadMul</servlet-name>
+		<servlet-class>com.ti.servlets.UploadMul</servlet-class>
+		<init-param>
+			<param-name>chemin_private</param-name>
+			<param-value>C:/Users/ynnot/Documents/tp/private/</param-value>
+		</init-param>
+		<init-param>
+			<param-name>chemin_public</param-name>
+			<param-value>C:/Users/ynnot/Documents/tp/public/</param-value>
+		</init-param>
+		<multipart-config>
+			<location>C:/Users/ynnot/Documents/tp</location>
+			<max-file-size>10485760</max-file-size> <!-- 10 Mo -->
+			<max-request-size>52428800</max-request-size> <!-- 5 x 10 Mo -->
+			<file-size-threshold>1048576</file-size-threshold> <!-- 1 Mo -->
+		</multipart-config>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UploadMul</servlet-name>
+		<url-pattern>/uploadMul</url-pattern>
+	</servlet-mapping>
+
+	<listener>
+		<listener-class>com.ti.config.InitialisationDaoFactory</listener-class>
+	</listener>
+
+	<!--  <filter>
+		<filter-name>RestrictionFilter</filter-name>
+		<filter-class>com.ti.filters.RestrictionFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>RestrictionFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>-->
+</web-app>
