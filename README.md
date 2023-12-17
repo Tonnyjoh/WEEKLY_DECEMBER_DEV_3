@@ -3,9 +3,9 @@
   ex: C:\Program Files\apache-tomcat-10.1.15\webapps\Week-3-main
  Under Week-3-main, we must have the WEB-INF directory and others.
  From Windows, go to the /bin folder of your Tomcat installation, and launch the file called startup.bat
-# Entry link
+Entry link
   ex: http://localhost:8080/Week-3-main/home
-# In the web.xml file, make changes:
+In the web.xml file, make changes:
 create a directory C:/Users/@youpseudo/Documents/tp in which you will create a "public" folder and a "private" folder
 Now change directories in web.xml
   ex:  "<param-value>C:/Users/ynnot/Documents/tp/</param-value>" and
