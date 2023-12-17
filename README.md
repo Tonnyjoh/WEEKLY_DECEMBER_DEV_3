@@ -25,6 +25,6 @@
 # Navigate to "dao.properties" in C:\Program Files\apache-tomcat-10.1.15\webapps\week3\WEB-INF\classes\com\ti\dao and change
   url = jdbc:mysql://localhost:3306/week3
   driver = com.mysql.jdbc.Driver
-  username = <yourname>
-  password = <yourpassword>
+  username = @yourname
+  password = @yourpassword
 # Restart your server.  
