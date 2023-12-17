@@ -28,3 +28,6 @@ Now change directories in web.xml
   username = @yourname
   password = @yourpassword
 # Restart your server.  
+# You can try to download file like
+http://localhost:8080/Week-3-main/fichiers/public/test.txt 
+ 
